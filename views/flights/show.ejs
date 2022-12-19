@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+
+<body>
+
+    <section id="show-page">
+        <div>Airline: </div>
+        <div>
+            <%= flight.airline %>
+        </div>
+        <div>Airport: </div>
+        <div>
+            <%= flight.airport %>
+        </div>
+        <div>Flight No.: </div>
+        <div>
+            <%= flight.flightNo %>
+        </div>
+        <div>Departs: </div>
+        <div>
+            <%= flight.departs %>
+        </div>
+        <!-- <div>Destination: </div>
+        <div>
+            <%= flight.destinations %>
+        </div> -->
+    </section>
+    <br>
+    <form id="add-dest" method="POST" action="/flights/<%= flight._id %>/destinations">
+        <label>Arrival: <input type="datetime-local" name="arrival"></label>
+        <label>Destination: 
+            <select name="airport" value="DEN">
+                <option value="DEN">DEN</option>
+                <option value="AUS">AUS</option>
+                <option value="DFW">DFW</option>
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
+                <option value="JFK">JFK</option>
+            </select>
+        </label>
+        <input type="submit" value="Add Destination">
+    </form>
+    <br>
+    <a href="/">Home</a>
+
+    <% if (movie.reviews.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Destination</th>
+                    <th>Arrival</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% flight.destinations.forEach(function(d) { %>
+                    <tr>
+                        <td>
+                            <%= d.arrival %>
+                        </td>
+                        <td>
+                            <%= d.airport %>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <% } else { %>
+            <h5>No Destinations Added</h5>
+            <% } %>
+</body>
+
+</html>
