@@ -5,17 +5,13 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-
-    <nav>
-      <img id="logo" src="/images/plane.png">
-      <a href="/flights/new" <%- title==='Add Flight' ? 'class="active"' : '' %>>ADD FLIGHT</a>
-      <a href="/flights" <%- title==='All Flights' ? 'class="active"' : '' %>>ALL FLIGHTS</a>
-    </nav>
-
+   
+    <div id="intro">
     <h1><%= title %></h1>
     <p>Welcome! Click a link below to get started.</p>
     <br>
     <a href="/flights/new">Add a new Flight</a>
     <a href="/flights">View All Flights</a>
+    </div>
   </body>
 </html>

@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    
 
     <section id="show-page">
         <div>Airline: </div>
@@ -27,10 +28,7 @@
         <div>
             <%= flight.departs %>
         </div>
-        <!-- <div>Destination: </div>
-        <div>
-            <%= flight.destinations %>
-        </div> -->
+    
     </section>
     <br>
     <form id="add-dest" method="POST" action="/flights/<%= flight._id %>/destinations">
@@ -47,10 +45,8 @@
         </label>
         <input type="submit" value="Add Destination">
     </form>
-    <br>
-    <a href="/">Home</a>
 
-    <% if (movie.reviews.length) { %>
+    <% if (flight.destinations.length) { %>
         <table>
             <thead>
                 <tr>
@@ -74,6 +70,8 @@
         <% } else { %>
             <h5>No Destinations Added</h5>
             <% } %>
+
+    <a href="/">Home</a>
 </body>
 
 </html>

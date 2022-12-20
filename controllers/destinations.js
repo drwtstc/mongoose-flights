@@ -14,6 +14,6 @@ function create(req, res) {
         // Step 5:  Respond to the Request (redirect if data has been changed)
         res.redirect(`/flights/${flight._id}`);
       });
-      console.log(`destinations: ${flight.destinations}`);
+      
     });
   }

@@ -9,7 +9,7 @@
 <body>
     
     <h1>New Ticket</h1>    
-    <form action="/flights/<%= flightId %>/tickets" method="POST">
+    <form action="/flights/<%= f._id %>/tickets" method="POST">
         <label>Seat<input type="text" name="seat" required pattern="[A-F][1-9]\d?"></label>
         <br>
         <label>Price<input type="text" name="price"></label>
